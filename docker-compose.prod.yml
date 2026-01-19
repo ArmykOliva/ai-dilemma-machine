@@ -14,7 +14,7 @@ services:
       - backend
     restart: unless-stopped
     networks:
-      - dokploy-network
+      - ai-dilemma-network
 
   # React Frontend
   frontend:
@@ -27,7 +27,7 @@ services:
       - NODE_ENV=production
     restart: unless-stopped
     networks:
-      - dokploy-network
+      - ai-dilemma-network
 
   # FastAPI Backend
   backend:
@@ -46,7 +46,7 @@ services:
         condition: service_healthy
     restart: unless-stopped
     networks:
-      - dokploy-network
+      - ai-dilemma-network
 
   # PostgreSQL Database
   postgres:
@@ -64,11 +64,11 @@ services:
       retries: 3
     restart: unless-stopped
     networks:
-      - dokploy-network
+      - ai-dilemma-network
 
 volumes:
   postgres_data:
 
 networks:
-  dokploy-network:
+  ai-dilemma-network:
     external: true
