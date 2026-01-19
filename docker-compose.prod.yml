@@ -8,13 +8,6 @@ services:
       dockerfile: Dockerfile.prod
     ports:
       - "80"
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.ai-dilemma.rule=Host(`ai-dilemma.ollsoft.org`)"
-      - "traefik.http.routers.ai-dilemma.entrypoints=websecure"
-      - "traefik.http.routers.ai-dilemma.tls.certresolver=letsencrypt"
-      - "traefik.http.services.ai-dilemma.loadbalancer.server.port=80"
-      - "traefik.docker.network=dokploy-network"
     networks:
       - dokploy-network
     depends_on:
