@@ -1,0 +1,15 @@
+---
+alwaysApply: true
+---
+
+Whene developing frontend, use 
+- tailwind styling
+- lucid icons - DONT USE EMOJIS, just icons
+- Shadcn components as building blocks (ALWAYS use the ShadCN MCP when working with components)
+- zustand to handle states of frontend (we should always load data into a state and then only render the state. so we basically have api->state json->frontend rendering)
+- use framer for animations, always animate stuff nicely
+- frontend is already running through docker compose. never start it yourself! Never touch docker compose!!!!!!!!!
+- use the playwright mcp or the webbrowser to look at the website to test your new features or style out automatically
+- when interfacing with api, always look into src/types/api.d.ts - it is the openai typsescrpt configuration of the backend
+- always translate all text to the src/i18n/locales
+- web is running at localhost:3000

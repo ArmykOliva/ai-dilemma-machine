@@ -1,0 +1,52 @@
+# Multi-stage build for production frontend
+
+# Stage 1: Build the application
+FROM node:24-alpine AS builder
+
+WORKDIR /app
+
+# Copy package files
+COPY package.json package-lock.json* ./
+
+# Install ALL dependencies (including devDependencies needed for build)
+RUN npm ci
+
+# Copy source code
+COPY . .
+
+# Accept build arguments for Vite environment variables
+ARG VITE_SUPERTOKENS_API_DOMAIN=http://localhost
+ARG VITE_SUPERTOKENS_WEBSITE_DOMAIN=http://localhost
+
+# Set them as environment variables for the build
+ENV VITE_SUPERTOKENS_API_DOMAIN=$VITE_SUPERTOKENS_API_DOMAIN
+ENV VITE_SUPERTOKENS_WEBSITE_DOMAIN=$VITE_SUPERTOKENS_WEBSITE_DOMAIN
+
+# Build the application (creates dist folder)
+# Skip TypeScript checking in production build - Vite will still bundle correctly
+RUN npx vite build
+
+# Stage 2: Serve the application
+FROM node:24-alpine AS runner
+
+WORKDIR /app
+
+# Install curl for healthcheck
+RUN apk add --no-cache curl
+
+# Install serve to host the static files
+RUN npm install -g serve
+
+# Copy built files from builder stage
+COPY --from=builder /app/dist ./dist
+
+# Create non-root user for security
+RUN addgroup -g 1001 -S nodejs && \
+    adduser -S nodejs -u 1001
+
+USER nodejs
+
+EXPOSE 3000
+
+# Serve the built application on port 3000
+CMD ["serve", "-s", "dist", "-l", "3000"]

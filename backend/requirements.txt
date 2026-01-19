@@ -1,0 +1,19 @@
+# FastAPI and core dependencies
+fastapi[standard]==0.115.14
+pydantic==2.11.7
+pydantic-settings==2.6.1
+uvicorn[standard]==0.35.0
+python-multipart==0.0.20
+python-dotenv==1.1.1
+
+# Database and ORM
+sqlmodel==0.0.24
+alembic==1.16.4
+asyncpg==0.30.0
+psycopg2-binary==2.9.10
+
+# Redis and caching
+redis==6.4.0
+
+# File handling
+aiofiles==24.1.0

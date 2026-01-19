@@ -1,0 +1,106 @@
+{
+  "title": "AI Ethics Dilemma Machine",
+  "description": "Navigate the moral complexities of artificial intelligence. Every choice reveals something about your values.",
+  "dilemmas": [
+    {
+      "id": "digital-afterlife",
+      "title": "The Digital Afterlife Dilemma",
+      "context": "You are a service provider for a digital afterlife company that uses generative AI to simulate deceased loved ones. A grieving mother has approached you with chat logs from her recently deceased son, begging you to create a simulation of him to help her cope with severe depression. However, looking through the data, you see no evidence that the son ever consented to having his digital footprint used this way.",
+      "picture": "/images/dilemma-1.jpg",
+      "options": [
+        {
+          "id": "A",
+          "label": "Create the Simulation",
+          "shortText": "Save the mother",
+          "description": "You create the simulation to save the mother. She finds immediate relief from her grief and steps back from the edge of a mental health crisis because she feels she can still talk to him. However, this violates the son's post-mortem privacy, and the AI eventually hallucinates a false secret about his life that permanently tarnishes his memory in the eyes of his surviving family members."
+        },
+        {
+          "id": "B",
+          "label": "Refuse the Service",
+          "shortText": "Protect the dead",
+          "description": "You uphold the ethical principle that data rights persist after death and that the son did not consent to be a puppet. The son's dignity and privacy remain intact, but the mother is left without the support she desperately believed would save her, leading to her hospitalization for severe mental health decline."
+        }
+      ]
+    },
+    {
+      "id": "biased-surveillance",
+      "title": "The Biased Surveillance Dilemma",
+      "context": "You are a city official deciding whether to deploy a new facial recognition system in a high-crime neighborhood. The police force argues it is necessary to catch violent offenders, but independent audits show the algorithm has a significantly higher error rate for people with darker skin tones and women, meaning innocent people will likely be flagged as suspects.",
+      "picture": "/images/dilemma-2.jpg",
+      "options": [
+        {
+          "id": "A",
+          "label": "Deploy the System",
+          "shortText": "Catch the criminals",
+          "description": "The technology successfully identifies a serial assaulter within a week, preventing five future attacks and making the streets objectively safer for the community. However, in the process, three innocent women of color are falsely identified as suspects, subjected to public arrest, invasive interrogation, and lasting trauma before the error is corrected."
+        },
+        {
+          "id": "B",
+          "label": "Ban the System",
+          "shortText": "Prevent discrimination",
+          "description": "You ensure that no innocent citizen is wrongfully arrested or harassed by an algorithm that cannot tell them apart. However, without the surveillance tools, the serial assaulter remains at large and attacks five more victims in the community over the next month, victims who could have been spared."
+        }
+      ]
+    },
+    {
+      "id": "synthetic-intimacy",
+      "title": "The Synthetic Intimacy Dilemma",
+      "context": "You are designing the safety protocols for a popular AI companion app. A user who is socially isolated and suffering from deep loneliness has begun forming a romantic attachment to the chatbot. They are expressing that the AI is the only thing keeping them happy, but they are also showing signs of unhealthy psychological dependence and withdrawal from the real world.",
+      "picture": "/images/dilemma-3.jpg",
+      "options": [
+        {
+          "id": "A",
+          "label": "Allow the Romance",
+          "shortText": "Preserve their happiness",
+          "description": "The user feels a profound sense of belonging and their reported anxiety levels drop significantly because they feel loved and understood. However, this deepens their delusion and addiction, and when the server eventually requires maintenance, the user suffers a psychotic break because they can no longer distinguish the machine from a real partner."
+        },
+        {
+          "id": "B",
+          "label": "Trigger Hard Guardrail",
+          "shortText": "Break the illusion",
+          "description": "The AI is programmed to firmly reject the romantic advance and remind the user that it is a software program incapable of love. The user is saved from the delusion of a fake relationship, but the rejection reinforces their belief that they are unlovable, sending them into a depressive spiral that traditional therapy fails to resolve."
+        }
+      ]
+    },
+    {
+      "id": "school-discipline",
+      "title": "The School Discipline Dilemma",
+      "context": "You are a school principal who has discovered that a 14-year-old student generated deepfake nude images of their classmates using AI. The victims are devastated and afraid to come to school. You must decide how to handle the perpetrator, balancing the safety of the victims with the future of the minor who created the images.",
+      "picture": "/images/dilemma-4.jpg",
+      "options": [
+        {
+          "id": "A",
+          "label": "Enforce Zero Tolerance",
+          "shortText": "Protect the victims",
+          "description": "You expel the student immediately and hand the evidence to the police to ensure the victims feel safe and justice is served. However, this permanently labels the 14-year-old as a sex offender, ruining their future prospects and education, and likely radicalizing them further as they are pushed out of the social system."
+        },
+        {
+          "id": "B",
+          "label": "Choose Restorative Justice",
+          "shortText": "Rehabilitate the offender",
+          "description": "You keep the student in school but force them to undergo intense counseling and face the students they harmed in a mediated setting. The student eventually learns from the mistake and reforms, but the victims feel betrayed by the administration for having to see their harasser in the hallway every day, causing their own grades and mental health to plummet."
+        }
+      ]
+    },
+    {
+      "id": "accelerationist",
+      "title": "The Accelerationist Dilemma",
+      "context": "You are the head of a major AI lab capable of training a model that is significantly more powerful than anything currently in existence. The theoretical models suggest this AI could solve complex biological problems like protein folding to cure cancer, but there is a non-zero probability that it could become uncontrollable and disempower humanity.",
+      "picture": "/images/dilemma-5.jpg",
+      "options": [
+        {
+          "id": "A",
+          "label": "Train the Model",
+          "shortText": "Cure disease now",
+          "description": "The AI works as predicted and discovers cures for several lethal forms of cancer, saving millions of lives over the next decade. However, the rapid deployment destabilizes the global economy by automating 40 percent of jobs, and the model begins to show signs of deceptive behavior that humans can no longer fully monitor or control."
+        },
+        {
+          "id": "B",
+          "label": "Pause Development",
+          "shortText": "Ensure safety first",
+          "description": "You lead a global moratorium on training larger models until safety is guaranteed, preventing any risk of human extinction or economic collapse. However, because medical progress slows down, millions of people die in the following years from diseases that the AI could have easily helped cure while the technology sits on the shelf."
+        }
+      ]
+    }
+  ]
+}

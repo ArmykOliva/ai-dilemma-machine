@@ -1,0 +1,73 @@
+# docker compose -f docker-compose.prod.yml up --build
+
+services:
+  # Nginx reverse proxy
+  nginx:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile.prod
+    env_file:
+      - .env
+    ports:
+      - "80:80"
+    depends_on:
+      - frontend
+      - backend
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://127.0.0.1:80/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  # React Frontend
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.prod
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=production
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  # FastAPI Backend
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.prod
+    env_file:
+      - .env
+    environment:
+      - ENVIRONMENT=production
+      - DATABASE_URL=postgresql://ollsoft:${POSTGRES_PASSWORD}@postgres:5432/app_db
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  # PostgreSQL Database
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      - POSTGRES_USER=ollsoft
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=app_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ollsoft -d app_db"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  node_modules:
+  postgres_data:

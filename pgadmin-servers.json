@@ -1,0 +1,25 @@
+{
+  "Servers": {
+    "1": {
+      "Name": "App Database",
+      "Group": "Development",
+      "Host": "postgres",
+      "Port": 5432,
+      "MaintenanceDB": "app_db",
+      "Username": "ollsoft",
+      "SSLMode": "prefer",
+      "Comment": "Main application database"
+    },
+    "2": {
+      "Name": "SuperTokens Database",
+      "Group": "Development",
+      "Host": "postgres",
+      "Port": 5432,
+      "MaintenanceDB": "supertokens",
+      "Username": "ollsoft",
+      "SSLMode": "prefer",
+      "Comment": "SuperTokens authentication database"
+    }
+  }
+}
+

@@ -1,0 +1,53 @@
+# Set default behavior to automatically normalize line endings to LF
+* text=auto eol=lf
+
+# Explicitly declare text files you want to always be normalized and converted to LF on checkout
+*.py text eol=lf
+*.js text eol=lf
+*.ts text eol=lf
+*.tsx text eol=lf
+*.jsx text eol=lf
+*.json text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
+*.css text eol=lf
+*.html text eol=lf
+*.xml text eol=lf
+*.svg text eol=lf
+
+# Ensure shell scripts always have LF line endings
+*.sh text eol=lf
+
+# Docker-related files should have LF line endings
+Dockerfile* text eol=lf
+docker-entrypoint.sh text eol=lf
+docker-compose*.yml text eol=lf
+.dockerignore text eol=lf
+
+# Configuration files
+*.conf text eol=lf
+*.config text eol=lf
+*.ini text eol=lf
+.gitignore text eol=lf
+.gitattributes text eol=lf
+.editorconfig text eol=lf
+
+# Binary files - do not modify
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.svg binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.eot binary
+*.otf binary
+*.pdf binary
+*.zip binary
+*.gz binary
+*.tar binary
+
