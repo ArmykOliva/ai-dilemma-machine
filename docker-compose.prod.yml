@@ -9,7 +9,7 @@ services:
     env_file:
       - .env
     ports:
-      - "80:80"
+      - "19191:80"
     depends_on:
       - frontend
       - backend
