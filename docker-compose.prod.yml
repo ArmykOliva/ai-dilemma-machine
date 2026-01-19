@@ -8,13 +8,13 @@ services:
       context: ./nginx
       dockerfile: Dockerfile.prod
     ports:
-      - "80"
+      - "8001"
     depends_on:
       - frontend
       - backend
     restart: unless-stopped
     networks:
-      - ai-dilemma-network
+      - dokploy-network
 
   # React Frontend
   frontend:
@@ -27,7 +27,7 @@ services:
       - NODE_ENV=production
     restart: unless-stopped
     networks:
-      - ai-dilemma-network
+      - dokploy-network
 
   # FastAPI Backend
   backend:
@@ -46,7 +46,7 @@ services:
         condition: service_healthy
     restart: unless-stopped
     networks:
-      - ai-dilemma-network
+      - dokploy-network
 
   # PostgreSQL Database
   postgres:
@@ -64,11 +64,11 @@ services:
       retries: 3
     restart: unless-stopped
     networks:
-      - ai-dilemma-network
+      - dokploy-network
 
 volumes:
   postgres_data:
 
 networks:
-  ai-dilemma-network:
-    driver: bridge
+  dokploy-network:
+    external: true

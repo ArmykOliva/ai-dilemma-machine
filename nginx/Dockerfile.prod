@@ -7,7 +7,7 @@ RUN apk add --no-cache curl
 COPY nginx.prod.conf /etc/nginx/nginx.conf
 
 # Expose HTTP
-EXPOSE 80
+EXPOSE 8001
 # Uncomment this if you want to expose HTTPS via a SSL certificate
 # EXPOSE 443
 
