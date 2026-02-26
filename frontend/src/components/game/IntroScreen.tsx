@@ -19,14 +19,14 @@ export const IntroScreen = () => {
           transition={{ delay: 0.2 }}
         >
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="bg-gradient-to-r from-pink-500 via-purple-500 to-orange-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-purple-400 via-white-500 to-blue-400 bg-clip-text text-transparent">
               {dilemmasData.title}
             </span>
           </h1>
         </motion.div>
 
         <motion.p
-          className="text-lg text-gray-300 mb-2 leading-relaxed"
+          className="text-lg text-black-300 mb-2 leading-relaxed"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4 }}
@@ -43,20 +43,20 @@ export const IntroScreen = () => {
       >
         <GlassCard>
           <div className="flex items-center gap-3 mb-4">
-            <Palette className="w-5 h-5 text-purple-400" />
-            <h3 className="text-lg font-semibold text-white">Your Story</h3>
+            <Palette className="w-5 h-5 text-blue-400" />
+            <h3 className="text-lg font-semibold text-blue-400">Your Story</h3>
           </div>
-          <div className="space-y-4 text-gray-300 leading-relaxed text-sm md:text-base">
+          <div className="space-y-4 text-black-300 leading-relaxed text-sm md:text-base">
             <p>
-              <span className="text-white font-medium">The year is 2026.</span> You are the creative director of a rising game studio that has just adopted cutting-edge AI art generation. The technology is extraordinary — it creates stunning visuals in seconds that would take human artists weeks.
+              <span className="text-blue-400 font-medium">The year is 2026.</span> You are the creative director of a rising game studio that has just discovered AI art generation. The technology is extraordinary! It creates stunning visuals in seconds that would take your team of artists weeks!
             </p>
             <p>
-              But extraordinary power brings extraordinary questions. Who owns what the AI creates? What happens to the artists it learned from? How transparent should you be? And what happens when the technology you unleashed starts reshaping the very idea of creativity?
+              But extraordinary technology brings extraordinary questions. Who owns what the AI creates? What will happen to the artists of your game studio? How transparent should you be? And what happens when the technology you're using starts reshaping the very idea of creativity?
             </p>
             <p>
-              Over <span className="text-white font-medium">{dilemmasData.dilemmas.length} escalating decisions</span>, you'll navigate the real dilemmas at the intersection of AI and human art — from courtroom battles over copyright to an existential reckoning with what happens when machines no longer need us to create.
+              Over <span className="text-blue-400 font-medium">{dilemmasData.dilemmas.length} decisions</span>, you'll navigate the dilemmas at the intersection of AI and human art. Every decision might shape the future of creativity. When you're done, ask yourself: did you prioritize fairness, innovation, profit, or trust?
             </p>
-            <p className="text-gray-400 italic">
+            <p className="text-purple-400 italic">
               There are no right answers. Only trade-offs. Your responses will be compared to other players.
             </p>
           </div>
@@ -73,12 +73,12 @@ export const IntroScreen = () => {
         <button
           onClick={startGame}
           disabled={isLoading}
-          className="group relative px-8 py-4 bg-gradient-to-r from-pink-600 to-orange-600 
+          className="group relative px-8 py-4 bg-gradient-to-r from-purple-500 to-blue-500 
                      rounded-xl font-semibold text-white text-lg
-                     hover:from-pink-500 hover:to-orange-500
+                     hover:from-purple-400 hover:to-blue-400
                      disabled:opacity-50 disabled:cursor-not-allowed
                      transition-all duration-300
-                     shadow-lg shadow-pink-500/20 hover:shadow-pink-500/40
+                     shadow-lg shadow-purple-500/20 hover:shadow-blue-500/40
                      hover:scale-[1.02] active:scale-[0.98]"
         >
           <span className="flex items-center gap-2">

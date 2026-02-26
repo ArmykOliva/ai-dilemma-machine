@@ -1,19 +1,19 @@
 /**
  * GlassCard - Glassmorphism styled card component
  */
-import { ReactNode } from 'react'
+import type { ReactNode } from 'react'
 import { cn } from '@/lib/utils'
 
 interface GlassCardProps {
   children: ReactNode
   className?: string
-  glowColor?: 'pink' | 'orange' | 'cyan' | 'none'
+  glowColor?: 'blue' | 'purple' | 'cyan' | 'none'
 }
 
 export const GlassCard = ({ children, className, glowColor = 'none' }: GlassCardProps) => {
   const glowStyles = {
-    pink: 'shadow-pink-500/10 border-pink-500/20',
-    orange: 'shadow-orange-500/10 border-orange-500/20',
+    blue: 'shadow-blue-500/10 border-blue-500/20',
+    purple: 'shadow-purple-500/10 border-purple-500/20',
     cyan: 'shadow-cyan-500/10 border-cyan-500/20',
     none: 'border-white/10',
   }
