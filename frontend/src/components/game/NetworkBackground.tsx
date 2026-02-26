@@ -30,9 +30,9 @@ export const NetworkBackground = () => {
   }, [])
 
   const colorMap = {
-    magenta: 'rgba(236, 72, 153, 0.6)',
-    orange: 'rgba(251, 146, 60, 0.6)',
-    cyan: 'rgba(34, 211, 238, 0.6)',
+    magenta: 'rgba(202, 128, 165, 0.6)',
+    orange: 'rgba(209, 165, 130, 0.6)',
+    cyan: 'rgba(132, 187, 196, 0.6)',
   }
 
   const glowMap = {
@@ -51,8 +51,8 @@ export const NetworkBackground = () => {
         className="absolute inset-0 opacity-10"
         style={{
           backgroundImage: `
-            linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)
+            linear-gradient(rgba(197, 197, 197, 0.69) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(186, 189, 196, 0.03) 1px, transparent 1px)
           `,
           backgroundSize: '50px 50px',
         }}
@@ -105,8 +105,8 @@ export const NetworkBackground = () => {
         })}
         <defs>
           <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="rgba(236, 72, 153, 0.5)" />
-            <stop offset="100%" stopColor="rgba(251, 146, 60, 0.5)" />
+            <stop offset="0%" stopColor="rgba(228, 128, 178, 0.5)" />
+            <stop offset="100%" stopColor="rgba(209, 160, 120, 0.5)" />
           </linearGradient>
         </defs>
       </svg>
