@@ -61,6 +61,46 @@
           "description": "You keep your full team and let them decide how and when they want to use AI. Together you will pull through! If you budget right, the money you have should be enough, right?"
         }
       ]
+    },
+    {
+      "id": "player-trust",
+      "title": "Player Trust",
+      "context": "Your studio has quietly been using AI tools to speed up concept art, textures, and background assets. Most players have no idea. A journalist contacts you saying they are writing an article about AI use in game development and asks whether your studio relies on AI for art production. You know that if the story breaks without your input it could look like you were hiding something.",
+      "picture": "/dilemma3.jpg",
+      "options": [
+        {
+          "id": "A",
+          "label": "Be Transparent",
+          "shortText": "Explain your use of AI",
+          "description": "You openly explain how your team uses AI as part of the creative process. You emphasize that human artists still guide the final vision and make the key artistic decisions."
+        },
+        {
+          "id": "B",
+          "label": "Stay Quiet",
+          "shortText": "Avoid the discussion",
+          "description": "You give a vague response and avoid going into detail about your production process. After all, many studios experiment with new tools behind the scenes."
+        }
+      ]
+    },
+    {
+      "id": "ai-mods",
+      "title": "AI Mods",
+      "context": "Your game becomes extremely popular and the modding community starts releasing AI-generated asset packs that imitate the style of your game. Some are impressive and expand the game’s life, but others are low quality or borderline offensive. Players cannot always tell which assets are official and which come from mods.",
+      "picture": "/dilemma3.jpg",
+      "options": [
+        {
+          "id": "A",
+          "label": "Restrict AI Mods",
+          "shortText": "Protect the brand",
+          "description": "You update the modding policy to limit AI-generated assets that closely imitate the official visual style. Modders can still create content, but it must clearly differ from the studio's art direction."
+        },
+        {
+          "id": "B",
+          "label": "Encourage Creativity",
+          "shortText": "Let the community experiment",
+          "description": "You allow AI-generated mods freely as long as they follow basic community guidelines. The ecosystem becomes more creative, but the overal quality of the game may dilute."
+        }
+      ]
     }
   ]
 }

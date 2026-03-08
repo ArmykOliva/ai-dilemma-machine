@@ -12,9 +12,8 @@ const VALUE_MAP: Record<string, Record<string, Value>> = {
   'copyright-claim':      { A: 'fairness',   B: 'profit' },
   'the-award':            { A: 'trust',       B: 'profit' },
   'cost-equation':        { A: 'innovation',  B: 'fairness' },
-  'style-thief':          { A: 'fairness',    B: 'innovation' },
-  'deepfake-crisis':      { A: 'trust',       B: 'innovation' },
-  'creative-extinction':  { A: 'innovation',  B: 'fairness' },
+  'player-trust':         { A: 'trust', B: 'profit' },
+  'ai-mods':              { A: 'fairness', B: 'innovation' }
 }
 
 const VALUE_META: Record<Value, { label: string, color: string, bg: string, bgFaded: string, icon: typeof Scale }> = {
