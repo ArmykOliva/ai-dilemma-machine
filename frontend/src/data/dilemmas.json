@@ -32,7 +32,7 @@
           "id": "A",
           "label": "Return the Award",
           "shortText": "Show full transparency",
-          "description": "You return the award and apologize, claiming that in the future, your company will be more transparent about using AI tools. Hopefully the players will apreciate your honesty and the scandal will brush over quickly..."
+          "description": "You return the award and apologize, claiming that in the future, your company will be more transparent about using AI tools. Hopefully the players will appreciate your honesty and the scandal will brush over quickly..."
         },
         {
           "id": "B",
@@ -45,14 +45,14 @@
     {
       "id": "cost-equation",
       "title": "50% off on Art",
-      "context": "Your company has introduced AI to the creative process a while ago. Your investors urge you to use AI even more in the creative department. They claim that using AI instead of a full staff of human artists can so much as half the cost of your game production! With your budget running low, it is tempting. Your art department of 30 talented people, some of whom have been with you since the studio's founding, is watching nervously as the quarterly review approaches.",
+      "context": "Your company has introduced AI to the creative process a while ago. Your investors urge you to use AI even more in the creative department. They claim that using AI instead of a full staff of human artists can nearly half the cost of your game production! With your budget running low, it is tempting. Your art department of 30 talented people, some of whom have been with you since the studio's founding, is watching nervously as the quarterly review approaches.",
       "picture": "/dilemma3.jpg",
       "options": [
         {
           "id": "A",
           "label": "Lower Prices",
           "shortText": "You could really use that money",
-          "description": "You downsize the art team to 10 and urge them to use AI for most of their work. As the last of the 20 artists you fired leaves the company (and gives you a glance that killsomeone) you get a slightly guilty conscience. But at least now you'll have the funds to finish your game! The quality of the art shouldn't suffer too much, right?"
+          "description": "You downsize the art team to 10 and urge them to use AI for most of their work. As the last of the 20 artists you fired leaves the company. But at least now you'll have the funds to finish your game! The quality of the art shouldn't suffer too much, right?"
         },
         {
           "id": "B",
@@ -98,7 +98,7 @@
           "id": "B",
           "label": "Encourage Creativity",
           "shortText": "Let the community experiment",
-          "description": "You allow AI-generated mods freely as long as they follow basic community guidelines. The ecosystem becomes more creative, but the overal quality of the game may dilute."
+          "description": "You allow AI-generated mods freely as long as they follow basic community guidelines. The ecosystem becomes more creative, but the overall quality of the game may dilute."
         }
       ]
     }
