@@ -11,23 +11,15 @@ interface GlassCardProps {
 }
 
 export const GlassCard = ({ children, className, glowColor = 'none' }: GlassCardProps) => {
-  const glowStyles = {
-    blue: 'shadow-blue-500/10 border-blue-500/20',
-    purple: 'shadow-purple-500/10 border-purple-500/20',
-    cyan: 'shadow-cyan-500/10 border-cyan-500/20',
-    none: 'border-white/10',
-  }
-
   return (
     <div
       className={cn(
-        'relative backdrop-blur-xl bg-white/5 rounded-2xl border p-8',
-        'shadow-2xl',
-        glowStyles[glowColor],
+        'relative rounded-xl border-2 border-zinc-900/80 bg-zinc-50 p-6 text-zinc-900',
+        'shadow-[6px_6px_0_0_rgba(0,0,0,0.85)]',
+        '-rotate-[0.4deg] hover:rotate-0 transition-transform duration-200',
         className
       )}
     >
-      {/* Content */}
       {children}
     </div>
   )
