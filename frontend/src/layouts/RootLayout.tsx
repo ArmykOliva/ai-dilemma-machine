@@ -13,13 +13,15 @@ import { APP_CONFIG } from '@/config'
  */
 const RootLayout = () => {
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-950">
+    <div className="min-h-screen bg-zinc-50 text-zinc-900">
       {/* Header */}
-      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <header className="sticky top-0 z-50 w-full border-b-2 border-zinc-900/80 bg-zinc-50">
         <div className="container mx-auto flex h-16 items-center justify-between px-4">
           {/* Logo */}
-          <div className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            {APP_CONFIG.NAME}
+          <div className="text-xl font-semibold tracking-tight uppercase">
+            <span className="inline-block border-b-4 border-zinc-900 pb-1">
+              {APP_CONFIG.NAME}
+            </span>
           </div>
         </div>
       </header>
@@ -30,7 +32,7 @@ const RootLayout = () => {
       </main>
 
       {/* Footer */}
-      <footer className="mt-auto border-t py-6 text-center text-sm text-muted-foreground">
+      <footer className="mt-auto border-t-2 border-zinc-900/40 py-6 text-center text-xs text-zinc-700">
         <p>Built with React, FastAPI, and TypeScript</p>
       </footer>
     </div>

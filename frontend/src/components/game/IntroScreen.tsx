@@ -18,15 +18,15 @@ export const IntroScreen = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
         >
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="bg-gradient-to-r from-purple-400 via-white-500 to-blue-400 bg-clip-text text-transparent">
+          <h1 className="text-4xl font-bold mb-4 tracking-tight">
+            <span className="inline-block border-b-4 border-zinc-900 pb-1">
               {dilemmasData.title}
             </span>
           </h1>
         </motion.div>
 
         <motion.p
-          className="text-lg text-black-300 mb-2 leading-relaxed"
+          className="text-base text-zinc-800 mb-2 leading-relaxed"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4 }}
@@ -42,24 +42,27 @@ export const IntroScreen = () => {
         transition={{ delay: 0.5 }}
       >
         <GlassCard>
-          <div className="flex items-center gap-3 mb-4">
-            <Palette className="w-5 h-5 text-blue-400" />
-            <h3 className="text-lg font-semibold text-blue-400">Your Story</h3>
-          </div>
-          <div className="space-y-4 text-black-300 leading-relaxed text-sm md:text-base">
-            <p>
-              <span className="text-blue-400 font-medium">The year is 2026.</span> You are the creative director of a rising game studio that has just discovered AI art generation. The technology is extraordinary! It creates stunning visuals in seconds that would take your team of artists weeks!
-            </p>
-            <p>
-              But extraordinary technology brings extraordinary questions. Who owns what the AI creates? What will happen to the artists of your game studio? How transparent should you be? And what happens when the technology you're using starts reshaping the very idea of creativity?
-            </p>
-            <p>
-              Over <span className="text-blue-400 font-medium">{dilemmasData.dilemmas.length} decisions</span>, you'll navigate the dilemmas at the intersection of AI and human art. Every decision might shape the future of creativity. When you're done, ask yourself: did you prioritize fairness, innovation, profit, or trust?
-            </p>
-            <p className="text-purple-400 italic">
-              There are no right answers. Only trade-offs. Your responses will be compared to other players.
-            </p>
-          </div>
+        <div className="flex items-center gap-3 mb-4">
+          <Palette className="w-5 h-5 text-zinc-900" />
+          <h3 className="text-lg font-semibold text-zinc-900 uppercase tracking-wide">
+            Your Story
+          </h3>
+        </div>
+        <div className="space-y-4 text-zinc-800 leading-relaxed text-sm md:text-base">
+          <p>
+            <span className="font-semibold underline underline-offset-2">The year is 2026.</span>{' '}
+            You are the creative director of a rising game studio that has just discovered AI art generation. The technology is extraordinary! It creates stunning visuals in seconds that would take your team of artists weeks!
+          </p>
+          <p>
+            But extraordinary technology brings extraordinary questions. Who owns what the AI creates? What will happen to the artists of your game studio? How transparent should you be? And what happens when the technology you're using starts reshaping the very idea of creativity?
+          </p>
+          <p>
+            Over <span className="font-semibold underline underline-offset-2">{dilemmasData.dilemmas.length} decisions</span>, you'll navigate the dilemmas at the intersection of AI and human art. Every decision might shape the future of creativity. When you're done, ask yourself: did you prioritize fairness, innovation, profit, or trust?
+          </p>
+          <p className="italic text-zinc-700">
+            There are no right answers. Only trade-offs. Your responses will be compared to other players.
+          </p>
+        </div>
         </GlassCard>
       </motion.div>
 
@@ -73,18 +76,19 @@ export const IntroScreen = () => {
         <button
           onClick={startGame}
           disabled={isLoading}
-          className="group relative px-8 py-4 bg-gradient-to-r from-purple-500 to-blue-500 
-                     rounded-xl font-semibold text-white text-lg
-                     hover:from-purple-400 hover:to-blue-400
-                     disabled:opacity-50 disabled:cursor-not-allowed
-                     transition-all duration-300
-                     shadow-lg shadow-purple-500/20 hover:shadow-blue-500/40
-                     hover:scale-[1.02] active:scale-[0.98]"
+          className="group relative inline-flex items-center justify-center
+                    px-8 py-3 border-2 border-zinc-900 bg-zinc-50 text-zinc-900
+                    font-semibold text-base
+                    shadow-[4px_4px_0_0_rgba(0,0,0,0.9)]
+                    transition-transform transition-shadow duration-200
+                    hover:-translate-x-[1px] hover:-translate-y-[1px] hover:shadow-[6px_6px_0_0_rgba(0,0,0,0.9)]
+                    active:translate-x-[1px] active:translate-y-[1px] active:shadow-[2px_2px_0_0_rgba(0,0,0,0.9)]
+                    disabled:opacity-50 disabled:cursor-not-allowed"
         >
           <span className="flex items-center gap-2">
             {isLoading ? (
               <>
-                <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                <div className="w-4 h-4 border-2 border-zinc-900/40 border-t-zinc-900 rounded-full animate-spin" />
                 Initializing...
               </>
             ) : (
