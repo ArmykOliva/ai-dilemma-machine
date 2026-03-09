@@ -17,10 +17,10 @@ const VALUE_MAP: Record<string, Record<string, Value>> = {
 }
 
 const VALUE_META: Record<Value, { label: string, color: string, bg: string, bgFaded: string, icon: typeof Scale }> = {
-  fairness:   { label: 'Fairness',   color: 'text-cyan-400', bg: 'bg-cyan-500', bgFaded: 'bg-cyan-500/20', icon: Scale },
-  innovation: { label: 'Innovation', color: 'text-blue-400',    bg: 'bg-blue-500',    bgFaded: 'bg-blue-500/20',    icon: Lightbulb },
-  trust:      { label: 'Trust',      color: 'text-purple-400',   bg: 'bg-purple-500',   bgFaded: 'bg-purple-500/20',   icon: ShieldCheck },
-  profit:     { label: 'Profit',     color: 'text-pink-400',    bg: 'bg-pink-500',    bgFaded: 'bg-pink-500/20',    icon: TrendingUp },
+  fairness:   { label: 'Fairness',   color: 'text-zinc-900', bg: 'bg-zinc-900', bgFaded: 'bg-zinc-200', icon: Scale },
+  innovation: { label: 'Innovation', color: 'text-zinc-900', bg: 'bg-zinc-900', bgFaded: 'bg-zinc-200', icon: Lightbulb },
+  trust:      { label: 'Trust',      color: 'text-zinc-900', bg: 'bg-zinc-900', bgFaded: 'bg-zinc-200', icon: ShieldCheck },
+  profit:     { label: 'Profit',     color: 'text-zinc-900', bg: 'bg-zinc-900', bgFaded: 'bg-zinc-200', icon: TrendingUp },
 }
 
 const PROFILES: Record<Value, { title: string, description: string }> = {
@@ -68,7 +68,7 @@ export const SummaryScreen = () => {
   const dominantValue = dominantValues[0][0]
 
   const profile = isTied ? BALANCED_PROFILE : PROFILES[dominantValue]
-  const profileColor = isTied ? 'text-purple-400' : VALUE_META[dominantValue].color
+  const profileColor = VALUE_META[dominantValue].color
 
   const averageAgreement = choices.length > 0
     ? choices.reduce((sum, c) => sum + c.percentageSame, 0) / choices.length
@@ -92,11 +92,11 @@ export const SummaryScreen = () => {
         animate={{ opacity: 1, y: 0 }}
       >
         <h1 className="text-3xl md:text-4xl font-bold mb-2">
-          <span className="bg-gradient-to-r from-purple-400 via-white-500 to-blue-400 bg-clip-text text-transparent">
+          <span className="inline-block border-b-4 border-zinc-900 pb-1">
             You Made Your Choices
           </span>
         </h1>
-        <p className="text-black-400">Here's what they reveal about you</p>
+        <p className="text-zinc-700">Here's what they reveal about you</p>
       </motion.div>
 
       {/* Profile card */}
@@ -105,10 +105,11 @@ export const SummaryScreen = () => {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 0.2 }}
       >
-        <GlassCard glowColor="blue">
+        <GlassCard>
           <div className="text-center">
             <motion.div
-              className="inline-block px-4 py-1 rounded-full text-sm font-medium mb-4 bg-purple-400/50 text-black-300"
+              className="inline-block px-4 py-1 rounded-full text-sm font-medium mb-4 border-2 border-zinc-900 bg-zinc-50
+                         shadow-[3px_3px_0_0_rgba(0,0,0,0.85)]"
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ delay: 0.4, type: 'spring' }}
@@ -116,7 +117,7 @@ export const SummaryScreen = () => {
               Your Profile
             </motion.div>
             <h2 className={`text-2xl font-bold mb-3 ${profileColor}`}>{profile.title}</h2>
-            <p className="text-black-300 leading-relaxed">{profile.description}</p>
+            <p className="text-zinc-800 leading-relaxed">{profile.description}</p>
           </div>
         </GlassCard>
       </motion.div>
@@ -128,7 +129,7 @@ export const SummaryScreen = () => {
         transition={{ delay: 0.4 }}
       >
         <GlassCard>
-          <h3 className="text-lg font-semibold text-black mb-4">What You Prioritized</h3>
+          <h3 className="text-lg font-semibold text-zinc-900 mb-4">What You Prioritized</h3>
           <div className="space-y-3">
             {(Object.entries(VALUE_META) as [Value, typeof VALUE_META[Value]][]).map(([key, meta]) => {
               const count = valueCounts[key]
@@ -136,23 +137,23 @@ export const SummaryScreen = () => {
               const pct = choices.length > 0 ? (count / choices.length) * 100 : 0
               return (
                 <div key={key} className="flex items-center gap-3">
-                  <Icon className={`w-4 h-4 flex-shrink-0 ${meta.color}`} />
-                  <span className={`w-20 text-sm font-medium ${meta.color}`}>{meta.label}</span>
-                  <div className="flex-1 h-2 bg-gray-300 rounded-full overflow-hidden">
+                  <Icon className="w-4 h-4 flex-shrink-0 text-zinc-900" />
+                  <span className="w-24 text-sm font-medium text-zinc-900">{meta.label}</span>
+                  <div className="flex-1 h-2 bg-zinc-200 rounded-full overflow-hidden border border-zinc-900/40">
                     <motion.div
-                      className={`h-full rounded-full ${meta.bg}`}
+                      className="h-full rounded-full bg-zinc-900"
                       initial={{ width: 0 }}
                       animate={{ width: `${pct}%` }}
                       transition={{ delay: 0.6, duration: 0.8 }}
                     />
                   </div>
-                  <span className="text-sm text-gray-600 w-6 text-right">{count}</span>
+                  <span className="text-sm text-zinc-700 w-6 text-right">{count}</span>
                 </div>
               )
             })}
           </div>
-          <div className="mt-4 pt-4 border-t border-gray-300 text-center">
-            <span className="text-sm text-black-400">
+          <div className="mt-4 pt-4 border-t border-zinc-300 text-center">
+            <span className="text-sm text-zinc-700">
               {averageAgreement.toFixed(0)}% average agreement with other players
             </span>
           </div>
@@ -166,7 +167,7 @@ export const SummaryScreen = () => {
         transition={{ delay: 0.6 }}
       >
         <GlassCard>
-          <h3 className="text-lg font-semibold text-black mb-4">Your Journey</h3>
+          <h3 className="text-lg font-semibold text-zinc-900 mb-4">Your Journey</h3>
           <div className="space-y-3">
             {dilemmas.map((dilemma, index) => {
               const choice = choices.find(c => c.dilemmaId === dilemma.id)
@@ -177,7 +178,7 @@ export const SummaryScreen = () => {
               return (
                 <motion.div
                   key={dilemma.id}
-                  className="flex items-center gap-3 p-3 bg-blue-200/30 rounded-lg"
+                  className="flex items-center gap-3 p-3 bg-zinc-100 rounded-lg border border-zinc-300"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.7 + index * 0.1 }}
@@ -188,15 +189,15 @@ export const SummaryScreen = () => {
                     </div>
                   )}
                   <div className="flex-1 min-w-0">
-                    <div className="text-sm font-medium text-black truncate">{dilemma.title}</div>
-                    <div className="text-xs text-black-500">{selectedOption?.shortText}</div>
+                    <div className="text-sm font-medium text-zinc-900 truncate">{dilemma.title}</div>
+                    <div className="text-xs text-zinc-700">{selectedOption?.shortText}</div>
                   </div>
                   {meta && (
-                    <span className={`text-xs px-2 py-0.5 rounded-full ${meta.bgFaded} ${meta.color}`}>
+                    <span className="text-xs px-2 py-0.5 rounded-full border border-zinc-900 bg-zinc-50">
                       {meta.label}
                     </span>
                   )}
-                  <div className="text-sm text-black-400">
+                  <div className="text-sm text-zinc-700">
                     {choice?.percentageSame.toFixed(0)}%
                   </div>
                 </motion.div>
@@ -212,16 +213,16 @@ export const SummaryScreen = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.9 }}
       >
-        <GlassCard glowColor="purple">
+        <GlassCard>
           <div className="flex items-center gap-3 mb-4">
-            <MessageCircleQuestion className="w-5 h-5 text-purple-400" />
-            <h3 className="text-lg font-semibold text-black">Now Reflect</h3>
+            <MessageCircleQuestion className="w-5 h-5 text-zinc-900" />
+            <h3 className="text-lg font-semibold text-zinc-900">Now Reflect</h3>
           </div>
           <div className="space-y-3">
             {REFLECTIONS.map((q, i) => (
               <motion.p
                 key={i}
-                className="text-black-300 text-sm leading-relaxed pl-4 border-l-2 border-purple-500/30"
+                className="text-zinc-800 text-sm leading-relaxed pl-4 border-l-2 border-zinc-900/40"
                 initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 1.0 + i * 0.15 }}
@@ -242,22 +243,25 @@ export const SummaryScreen = () => {
       >
         <button
           onClick={handleShare}
-          className="flex-1 py-3 bg-gradient-to-r from-purple-500 to-blue-500 
-                     rounded-xl font-semibold text-white
-                     hover:from-purple-400 hover:to-blue-400
-                     transition-all duration-300 flex items-center justify-center gap-2
-                     hover:scale-[1.01] active:scale-[0.99]"
+          className="flex-1 py-3 rounded-xl font-semibold text-zinc-900
+                     border-2 border-zinc-900 bg-zinc-50
+                     transition-transform duration-200 flex items-center justify-center gap-2
+                     shadow-[4px_4px_0_0_rgba(0,0,0,0.9)]
+                     hover:-translate-x-[1px] hover:-translate-y-[1px] hover:shadow-[6px_6px_0_0_rgba(0,0,0,0.9)]
+                     active:translate-x-[1px] active:translate-y-[1px] active:shadow-[2px_2px_0_0_rgba(0,0,0,0.9)]"
         >
           <Share2 className="w-5 h-5" />
           Share Results
         </button>
         <button
           onClick={resetGame}
-          className="flex-1 py-3 bg-purple-400 border border-blue-400
-                     rounded-xl font-semibold text-white
-                     hover:bg-purple-500 transition-all duration-300 
+          className="flex-1 py-3 rounded-xl font-semibold text-zinc-900
+                     border-2 border-zinc-900 bg-zinc-50
+                     transition-transform duration-200 
                      flex items-center justify-center gap-2
-                     hover:scale-[1.01] active:scale-[0.99]"
+                     shadow-[4px_4px_0_0_rgba(0,0,0,0.9)]
+                     hover:-translate-x-[1px] hover:-translate-y-[1px] hover:shadow-[6px_6px_0_0_rgba(0,0,0,0.9)]
+                     active:translate-x-[1px] active:translate-y-[1px] active:shadow-[2px_2px_0_0_rgba(0,0,0,0.9)]"
         >
           <RotateCcw className="w-5 h-5" />
           Play Again

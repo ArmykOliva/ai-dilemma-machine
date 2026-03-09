@@ -26,25 +26,22 @@ export const ResultScreen = () => {
   return (
     <div className="space-y-6">
       {/* Result card */}
-      <GlassCard glowColor={lastChoice?.choice === 'A' ? 'purple' : 'blue'}>
+      <GlassCard>
         {/* Choice confirmation */}
         <motion.div
           className="flex items-center gap-3 mb-6"
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          <div className={`w-12 h-12 rounded-full flex items-center justify-center
-                          ${lastChoice?.choice === 'A' 
-                            ? 'bg-purple-500/50 text-purple-600' 
-                            : 'bg-blue-500/50 text-blue-600'
-                          }`}>
+          <div
+            className="w-12 h-12 rounded-full flex items-center justify-center border-2 border-zinc-900 bg-zinc-50
+                       shadow-[4px_4px_0_0_rgba(0,0,0,0.85)]"
+          >
             <Check className="w-6 h-6" />
           </div>
           <div>
-            <h2 className="text-xl font-semibold text-black">Choice Made</h2>
-            <p className={`text-sm ${
-              lastChoice?.choice === 'A' ? 'text-purple-500' : 'text-blue-500'
-            }`}>
+            <h2 className="text-xl font-semibold text-zinc-900">Choice Made</h2>
+            <p className="text-sm text-zinc-700 italic">
               {selectedOption?.label}
             </p>
           </div>
@@ -52,50 +49,45 @@ export const ResultScreen = () => {
 
         {/* Consequence */}
         <motion.div
-          className = {lastChoice?.choice === 'A' ? "bg-purple-300 rounded-xl p-5 mb-6" : "bg-blue-300 rounded-xl p-5 mb-6"}
+          className="bg-zinc-100 border-2 border-zinc-900/30 rounded-xl p-5 mb-6"
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.2 }}
         >
-          <p className="text-black-200 leading-relaxed">
+          <p className="text-zinc-800 leading-relaxed">
             {selectedOption?.description}
           </p>
         </motion.div>
 
         {/* Statistics */}
         <motion.div
-          className="bg-gradient-to-r from-blue-300 to-purple-300 
-                     border border-purple-500 rounded-xl p-5"
+          className="bg-zinc-50 border-2 border-zinc-900 rounded-xl p-5 shadow-[4px_4px_0_0_rgba(0,0,0,0.85)]"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
         >
           <div className="flex items-center gap-3 mb-3">
-            <Users className="w-5 h-5 text-white" />
-            <span className="text-black-300 font-medium">Community Response</span>
+            <Users className="w-5 h-5 text-zinc-900" />
+            <span className="text-zinc-800 font-medium">Community Response</span>
           </div>
           
           {/* Percentage display */}
           <div className="flex items-baseline gap-2 mb-3">
             <motion.span
-              className="text-4xl font-bold text-black-500"
+              className="text-4xl font-bold text-zinc-900"
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ delay: 0.6, type: 'spring' }}
             >
               {lastChoicePercentage?.toFixed(1)}%
             </motion.span>
-            <span className="text-black-400">of players made the same choice</span>
+            <span className="text-zinc-700">of players made the same choice</span>
           </div>
 
           {/* Progress bar */}
-          <div className="h-2 bg-white/50 rounded-full overflow-hidden">
+          <div className="h-2 bg-zinc-200 rounded-full overflow-hidden border border-zinc-900/40">
             <motion.div
-              className={`h-full rounded-full ${
-                lastChoice?.choice === 'A' 
-                  ? 'bg-gradient-to-r from-blue-500 to-blue-400' 
-                  : 'bg-gradient-to-r from-purple-500 to-purple-400'
-              }`}
+              className="h-full rounded-full bg-zinc-900"
               initial={{ width: 0 }}
               animate={{ width: `${lastChoicePercentage || 0}%` }}
               transition={{ delay: 0.8, duration: 0.8, ease: 'easeOut' }}
@@ -113,13 +105,13 @@ export const ResultScreen = () => {
         <button
           onClick={nextDilemma}
           disabled={isLoading}
-          className="w-full py-4 bg-gradient-to-r from-purple-500 to-blue-500 
-                     rounded-xl font-semibold text-white text-lg
-                     hover:from-purple-400 hover:to-blue-400
+          className="w-full py-4 rounded-xl font-semibold text-zinc-900 text-lg
+                     border-2 border-zinc-900 bg-zinc-50
                      disabled:opacity-50 disabled:cursor-not-allowed
-                     transition-all duration-300 flex items-center justify-center gap-2
-                     shadow-lg shadow-purple-500/20 hover:shadow-blue-500/40
-                     hover:scale-[1.01] active:scale-[0.99]"
+                     transition-transform duration-200 flex items-center justify-center gap-2
+                     shadow-[4px_4px_0_0_rgba(0,0,0,0.9)]
+                     hover:-translate-x-[1px] hover:-translate-y-[1px] hover:shadow-[6px_6px_0_0_rgba(0,0,0,0.9)]
+                     active:translate-x-[1px] active:translate-y-[1px] active:shadow-[2px_2px_0_0_rgba(0,0,0,0.9)]"
         >
           {isLastDilemma ? (
             <>
