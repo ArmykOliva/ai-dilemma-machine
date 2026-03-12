@@ -66,7 +66,7 @@
       "id": "player-trust",
       "title": "Player Trust",
       "context": "Your studio has quietly been using AI tools to speed up concept art, textures, and background assets. Most players have no idea. A journalist contacts you saying they are writing an article about AI use in game development and asks whether your studio relies on AI for art production. You know that if the story breaks without your input it could look like you were hiding something.",
-      "picture": "/dilemma3.jpg",
+      "picture": "/dilemma4.jpg",
       "options": [
         {
           "id": "A",
@@ -86,7 +86,7 @@
       "id": "ai-mods",
       "title": "AI Mods",
       "context": "Your game becomes extremely popular and the modding community starts releasing AI-generated asset packs that imitate the style of your game. Some are impressive and expand the game’s life, but others are low quality or borderline offensive. Players cannot always tell which assets are official and which come from mods.",
-      "picture": "/dilemma3.jpg",
+      "picture": "/dilemma5.jpg",
       "options": [
         {
           "id": "A",
